@@ -2,12 +2,12 @@
  * @Author: 70Qiang strongcoderman@gmail.com
  * @Date: 2023-11-10 17:32:09
  * @LastEditors: 70Qiang strongcoderman@gmail.com
- * @LastEditTime: 2023-11-10 17:49:40
+ * @LastEditTime: 2023-11-13 17:06:03
  * @FilePath: /AwesomeProject/SRC_03_Dimensions/index.js
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
 import React, { Component } from 'react'
-import { Text, StyleSheet, View ,Dimensions} from 'react-native'
+import { Text, StyleSheet, View ,Dimensions, Image, Alert,TextInput} from 'react-native'
 
 export default class index extends Component {
   render() {
@@ -21,7 +21,7 @@ export default class index extends Component {
         <View style={[styles.container]}>
             
             <View style={[styles.itemBase,styles.h3]}>
-            <Text> 扫一扫 </Text>
+            <Text style={[styles.h3]}> 扫一扫 </Text>
             </View>
 
             <View style={[styles.itemBase,styles.h3]}>
@@ -37,6 +37,8 @@ export default class index extends Component {
             </View>
 
         </View>
+
+        <TextInput placeholder='请输入内容' backgroundColor='red'></TextInput>
 
       </View>
 
@@ -61,7 +63,7 @@ const styles = StyleSheet.create({
     },
 
     h3:{
-        fontSize:44,
+        fontSize:22,
 
     }
 

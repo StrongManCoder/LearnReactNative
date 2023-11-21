@@ -39,7 +39,7 @@ export default class index extends Component {
       <View style={[styles.container]}>
         <Button title='存储'onPress={this.storeData('hello RN')} ></Button>
         <Button title='读取' onPress={this.getData}></Button>
-        {/* 封装的存储组件   */}
+        {/* 封装的存储组件 Storage  */}
         <Button title='清空' onPress={Storage.clear}></Button>
 
 

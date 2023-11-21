@@ -2,7 +2,7 @@
  * @Author: 70Qiang strongcoderman@gmail.com
  * @Date: 2023-11-21 16:16:11
  * @LastEditors: 70Qiang strongcoderman@gmail.com
- * @LastEditTime: 2023-11-21 16:42:05
+ * @LastEditTime: 2023-11-21 16:46:15
  * @FilePath: /AwesomeProject/SRC_18_GeoLocation/index.js
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE   
  */
@@ -26,7 +26,7 @@ export default class index extends Component {
             info => {
             AsyncStorage.setItem('coords',JSON.stringify(info.coords))
     
-                Alert.alert('报错',JSON.stringify(info))
+                Alert.alert('定位信息',JSON.stringify(info))
             }, 
     
             error => Alert.alert('报错',JSON.stringify(error))

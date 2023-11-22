@@ -2,7 +2,7 @@
  * @Author: 70Qiang strongcoderman@gmail.com
  * @Date: 2023-11-10 14:40:00
  * @LastEditors: 70Qiang strongcoderman@gmail.com
- * @LastEditTime: 2023-11-21 17:08:20
+ * @LastEditTime: 2023-11-21 17:49:54
  * @FilePath: /AwesomeProject/App.js
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -35,7 +35,8 @@ import FlexDirection from './SRC_02_Flexbox/FlexDirection'
 // import Index from './SRC_16_Swiper'
 // import Index from './SRC_17_AsyncStorage'
 // import Index from './SRC_18_GeoLocation'
-import Index from './SRC_19_Camrea' 
+// import Index from './SRC_19_Camrea' 
+import Index from './SRC_20_ImagePicker'
 export default class App extends Component {
   render() {
     return (

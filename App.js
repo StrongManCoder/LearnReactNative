@@ -2,7 +2,7 @@
  * @Author: 70Qiang strongcoderman@gmail.com
  * @Date: 2023-11-10 14:40:00
  * @LastEditors: 70Qiang strongcoderman@gmail.com
- * @LastEditTime: 2023-11-21 17:49:54
+ * @LastEditTime: 2023-11-22 14:36:01
  * @FilePath: /AwesomeProject/App.js
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -14,6 +14,8 @@
  * @FilePath: /AwesomeProject/App.js
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
+
+import { NavigationContainer } from '@react-navigation/native';
 import React, { Component } from 'react'
 import { Text, View } from 'react-native'
 // import Index from './SRC_01_StyleSheet/index'
@@ -36,13 +38,24 @@ import FlexDirection from './SRC_02_Flexbox/FlexDirection'
 // import Index from './SRC_17_AsyncStorage'
 // import Index from './SRC_18_GeoLocation'
 // import Index from './SRC_19_Camrea' 
-import Index from './SRC_20_ImagePicker'
+// import Index from './SRC_20_ImagePicker'
+// import Index from './SRC_21_loading'
+import Index from './SRC_22_StackNavigator'
 export default class App extends Component {
   render() {
     return (
+
+      <NavigationContainer>
+
+      <Index></Index>
+
+      </NavigationContainer>
+
      
-        <Index></Index>
+       
         // <FlexDirection></FlexDirection>
     )
   }
 }
+
+

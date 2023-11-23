@@ -2,7 +2,7 @@
  * @Author: 70Qiang strongcoderman@gmail.com
  * @Date: 2023-11-22 15:10:24
  * @LastEditors: 70Qiang strongcoderman@gmail.com
- * @LastEditTime: 2023-11-22 16:30:08
+ * @LastEditTime: 2023-11-23 14:21:25
  * @FilePath: /AwesomeProject/SRC_23_BottomTab/index.js
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -56,7 +56,7 @@ export default class index extends Component {
                     }else if (route.name === 'News'){
                         iconName = focused ? 'person' : 'person-outline'
                     }else{
-                        // iconName = focused ? 'add-circle' : 'person-outline'
+                        iconName = focused ? 'settings' : 'settings-outline'
                     }
                     // return <Button title={iconName} size={size} color={color}/>
                   return <Ionicons name={iconName} size={size} color={color}/>

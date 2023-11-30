@@ -17,7 +17,7 @@ const includeExtra = true;
 export default function App() {
   const [response, setResponse] = React.useState<any>(null);
 
-  const onButtonPress = React.useCallback((type, options) => {
+  const onButtonPress = React.useCallback((type: string, options: ImagePicker.CameraOptions | ImagePicker.ImageLibraryOptions) => {
     if (type === 'capture') {
       ImagePicker.launchCamera(options, setResponse);
     } else {

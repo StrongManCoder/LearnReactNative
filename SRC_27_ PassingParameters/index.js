@@ -2,7 +2,7 @@
  * @Author: 70Qiang strongcoderman@gmail.com
  * @Date: 2023-11-23 16:45:11
  * @LastEditors: 70Qiang strongcoderman@gmail.com
- * @LastEditTime: 2023-11-23 17:28:37
+ * @LastEditTime: 2023-11-30 14:58:42
  * @FilePath: /AwesomeProject/SRC_27_ PassingParameters/index.js
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -54,6 +54,13 @@ function HomeScreen({ navigation }) {
 
 
   const Stack = createNativeStackNavigator()
+
+// // 跳转下一个页面 携带参数
+// function goNextPage(navigation,params){
+//   navigation.navigate('Details',params)
+// }
+
+
 
 export default function index() {
   return (

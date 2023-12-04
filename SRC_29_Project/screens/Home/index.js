@@ -2,7 +2,7 @@
  * @Author: 70Qiang strongcoderman@gmail.com
  * @Date: 2023-11-30 15:13:23
  * @LastEditors: 70Qiang strongcoderman@gmail.com
- * @LastEditTime: 2023-12-04 15:50:57
+ * @LastEditTime: 2023-12-04 16:42:01
  * @FilePath: /AwesomeProject/SRC_29_Project/screens/Home/index.js
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -78,7 +78,7 @@ export default class index extends Component {
         return<TouchableOpacity
         key={'index'+item.type}
         onPress={() =>{
-            Alert.alert(item.type)
+            Alert.alert("今日指数",item.name +":"+  item.category)
         }}
         >
             <View style={[styles.indexItem]}>

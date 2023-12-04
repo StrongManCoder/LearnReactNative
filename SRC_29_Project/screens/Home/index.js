@@ -2,7 +2,7 @@
  * @Author: 70Qiang strongcoderman@gmail.com
  * @Date: 2023-11-30 15:13:23
  * @LastEditors: 70Qiang strongcoderman@gmail.com
- * @LastEditTime: 2023-12-01 18:04:07
+ * @LastEditTime: 2023-12-04 15:50:57
  * @FilePath: /AwesomeProject/SRC_29_Project/screens/Home/index.js
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -13,8 +13,9 @@ import Swiper from 'react-native-swiper'
 import GeoLocation from '@react-native-community/geolocation'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import {getThreeDays,getCityInfo,getIndices} from '../../utils/api'
+import LinearGradient from 'react-native-linear-gradient'
 
-
+import WeatherIcons from '../../utils/weatherIcons'
 export default class index extends Component {
     constructor(){
         super()
@@ -22,6 +23,7 @@ export default class index extends Component {
         this.state = {
             city:{},
             indeces:[],
+            threeDays:[]
 
         }
     }
@@ -52,6 +54,13 @@ export default class index extends Component {
                 console.log(res)
                 this.setState({
                     indeces:res
+                })
+            })
+            //获取未来三天天气
+            getThreeDays(info.coords).then(res =>{
+                console.log(res)
+                this.setState({
+                    threeDays:res
                 })
             })
 
@@ -153,9 +162,47 @@ export default class index extends Component {
         keyExtractor={item => item.type}
         horizontal= {true}
         />
-
         </View>
        
+        <View style={[styles.dailyContainer]}>
+            {
+               this.state.threeDays.map((item,index,array) =>{
+                console.log(item.fxDate)
+                return<LinearGradient 
+                start={{x:0,y:0}}
+                end={{x:1,y:0}}
+                colors={['#ddd','#333']}
+                key={'weather'+index}
+                style={[styles.dailyItem]}
+                >
+                    <Text style={[styles.dailyItemTitle]}>{item.fxDate}</Text>
+                   
+                    <View style={[styles.dailyItemContent]}>
+                        <View style={{flexDirection:'row',justifyContent:'space-around'}}>
+                           <Image 
+                           style={[styles.weatherIcon]}
+                           //RN的image路径不能使用拼接路径  所以通过js生成静态的路径
+                           source={WeatherIcons[item.iconDay]}
+                           ></Image>
+
+                            <Text>{item.textDay}{item.tempMax}℃</Text>
+                        </View>
+
+                        <View style={{flexDirection:'row',justifyContent:'space-around'}}>
+                        <Image 
+                           style={[styles.weatherIcon]}
+                           //RN的image路径不能使用拼接路径  所以通过js生成静态的路径
+                           source={WeatherIcons[item.iconNight]}
+                           ></Image>
+                            <Text>{item.tempMin}℃{item.textNight}</Text>
+                        </View>                    
+                    </View>
+                </LinearGradient>
+               } )
+
+            }
+        </View>
+
         </ScrollView>
 
       </View>
@@ -222,7 +269,43 @@ const styles = StyleSheet.create({
     indexBase:{
         color:'#00b38a',
         fontSize:15,
+    },
+    dailyContainer:{
+        flex:1,
+        flexDirection:'row',
+        justifyContent:'space-between',
+        alignItems:'center',
+        flexWrap:'wrap',
+        marginHorizontal:10,
+    },
+    dailyItem:{
+        alignItems:'center',
+        justifyContent:'space-between',
+        borderRadius:20,
+        width:Dimensions.get('window').width -20,
+        marginTop:10,
+    },
+    dailyItemTitle:{
+        fontSize:20,
+        color:'#eee',
+        marginTop:10
+    },
+    dailyItemContent:{
+        flexDirection:'row',
+        justifyContent:'space-between',
+        width:Dimensions.get('window').width -40,
+        alignItems:'center',
+        marginBottom:10,
+
+    },
+    weatherIcon:{
+        width:50,
+        height:50,
+        marginHorizontal:10,
     }
+
+
+
 
 
 })

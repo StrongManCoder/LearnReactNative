@@ -2,7 +2,7 @@
  * @Author: 70Qiang strongcoderman@gmail.com
  * @Date: 2023-11-30 15:13:23
  * @LastEditors: 70Qiang strongcoderman@gmail.com
- * @LastEditTime: 2023-12-04 16:42:01
+ * @LastEditTime: 2023-12-06 14:23:38
  * @FilePath: /AwesomeProject/SRC_29_Project/screens/Home/index.js
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -12,7 +12,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons'
 import Swiper from 'react-native-swiper'
 import GeoLocation from '@react-native-community/geolocation'
 import AsyncStorage from '@react-native-async-storage/async-storage'
-import {getThreeDays,getCityInfo,getIndices} from '../../utils/api'
+import {getThreeDays,getCityInfo,getIndices,getNewsList} from '../../utils/api'
 import LinearGradient from 'react-native-linear-gradient'
 
 import WeatherIcons from '../../utils/weatherIcons'
@@ -62,6 +62,12 @@ export default class index extends Component {
                 this.setState({
                     threeDays:res
                 })
+            })
+
+
+            getNewsList('top').then(res =>{
+                console.log(res)
+
             })
 
 
@@ -151,7 +157,7 @@ export default class index extends Component {
 
         <View style={[styles.city]}>
             <Text style={[styles.cityText]}>
-                {this.state.city.country}{this.state.city.adm1}{this.state.city.adm2}
+                {this.state.city.country}{this.state.city.adm1}{this.state.city.adm2}{this.state.city.name}
             </Text>
         </View>
 

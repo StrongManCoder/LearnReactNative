@@ -2,7 +2,7 @@
  * @Author: 70Qiang strongcoderman@gmail.com
  * @Date: 2023-11-29 16:02:23
  * @LastEditors: 70Qiang strongcoderman@gmail.com
- * @LastEditTime: 2023-11-30 14:41:30
+ * @LastEditTime: 2023-12-07 17:49:00
  * @FilePath: /AwesomeProject/SRC_28_API/index.js
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -19,19 +19,19 @@ export default class index extends Component {
       }
       getThreeDays(coords).then(res => {
         //获取数据成功
-        Alert.alert('成功',res)
+          Alert.alert('请求成功',JSON.stringify(res))
         console.log(res)
       }).catch((err) => {
           Alert.alert('报错',JSON.stringify(err))
         })
 
 
-        //查询三天的天气预报
-        // let key = '5468f6560b024b9c81f63c35410e1b20'
+        // 查询三天的天气预报
+        // let key1 = '5468f6560b024b9c81f63c35410e1b20'
         // let location = "101010100"
-        // const url = `https://devapi.qweather.com/v7/weather/3d?location=${location}&key=${key}`
+        // const url1 = `https://devapi.qweather.com/v7/weather/3d?location=${location}&key=${key1}`
 
-        // fetch(url,{
+        // fetch(url1,{
         //   method:'GET'
         // }).then((res) =>{
         //   console.log(res.json())
@@ -41,7 +41,6 @@ export default class index extends Component {
         //   Alert.alert('报错',JSON.stringify(err))
         // })
         
-  
 
 
   }

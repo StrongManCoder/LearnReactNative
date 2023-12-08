@@ -2,7 +2,7 @@
  * @Author: 70Qiang strongcoderman@gmail.com
  * @Date: 2023-11-29 17:06:54
  * @LastEditors: 70Qiang strongcoderman@gmail.com
- * @LastEditTime: 2023-12-01 17:25:23
+ * @LastEditTime: 2023-12-07 17:50:33
  * @FilePath: /AwesomeProject/SRC_28_API/api.js
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -57,3 +57,23 @@ export const getIndices = async (coords,type = 0) =>{
     }
 
 }
+
+export const getNewsList = async (type) =>{
+    const key = "b767884b02d3a917c89e7f18c88f75dd"
+    const url =  `https://v.juhe.cn/toutiao/index?key=${key}&type=${type}`
+    
+    try {
+        const response = await (await fetch(url)).json()
+       console.log(response)
+        if(response.error_code === 0){
+            return response.result.data
+        }else{
+            return[]
+        }
+    }catch (err){
+        console.log('Error:',err)
+    }
+}
+
+
+  

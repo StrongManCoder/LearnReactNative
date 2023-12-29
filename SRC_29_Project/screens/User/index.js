@@ -2,7 +2,7 @@
  * @Author: 70Qiang strongcoderman@gmail.com
  * @Date: 2023-11-30 15:15:17
  * @LastEditors: 70Qiang strongcoderman@gmail.com
- * @LastEditTime: 2023-12-18 10:46:56
+ * @LastEditTime: 2023-12-29 14:10:51
  * @FilePath: /AwesomeProject/SRC_29_Project/screens/User/index.js
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -46,7 +46,7 @@ export default class index extends Component {
             </View>
           </TouchableOpacity>
 
-          <TouchableOpacity onPress={() => { Alert.alert('aaa')}}>
+          <TouchableOpacity onPress={() => this.props.navigation.navigate('Login') }>
             <View style={[styles.listItem]}>
               <View style={{flexDirection:'row',  alignItems:'center'}}>
               <Ionicons name={'settings-outline'} size={20} color={'#22d'}></Ionicons>
@@ -69,6 +69,8 @@ export default class index extends Component {
 
             </View>
           </TouchableOpacity>
+          
+          {/*退出登陆 */}
 
           
 
